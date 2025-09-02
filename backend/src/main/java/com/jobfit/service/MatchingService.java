@@ -23,7 +23,10 @@ public class MatchingService {
     @Value("${huggingface.api.enabled:true}")
     private boolean huggingFaceEnabled;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+     @Autowired
+    private RestTemplate restTemplate;
+
+    // private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public MatchResult matchResumeToJob(Resume resume, JobDescription jobDescription) {
